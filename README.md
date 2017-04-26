@@ -1,24 +1,3 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+If you are in the job seeking business. If you use some spreadsheet to inventory the jobs you want to apply for or have applied already. And your'e getting tired of scrolling your list to see if you already have applied for the position or with a particular company. This is a good app to use. You can enter as many jobs (job title, location, hiring-company, and even the url) as you want and gives you an easier way to go through your job list.
