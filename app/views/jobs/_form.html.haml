@@ -1,0 +1,66 @@
+.container
+  = form_for(job) do |f|
+    - if job.errors.any?
+      #error_explanation
+        %h2
+          = pluralize(job.errors.count, "error")
+          prohibited this job from being saved:
+
+
+        %ul
+        - job.errors.full_messages.each do |message|
+
+          %li= message
+
+    %fieldset
+      %legend Job Info
+      .jumbotron.container-fluid
+
+        .form-group
+          .row
+            .col-xs-2
+              = f.label :title
+            .col-xs-2
+              = f.text_field :title
+          %br
+          .row
+            .col-xs-2
+              = f.label :company
+            .col-xs-2
+              = f.text_field :company
+          %br
+          .row
+            .col-xs-2
+              = f.label :location
+            .col-xs-3
+              = f.text_field :location
+          %br
+          .row
+            .col-xs-2
+              = f.label :date_applied
+            .col-xs-4
+              = f.date_select :date_applied
+          %br
+          .row
+            .col-xs-2
+              = f.label :date_replied
+            .col-xs-4
+              = f.date_select :date_replied
+          %br
+          .row
+            .col-xs-2
+              = f.label :status
+            .col-xs-2
+              = f.text_field :status
+          %br
+          .row
+            .col-xs-2
+              = f.label :url
+            .col-xs-2
+              = f.text_field :url
+          %br
+          .actions
+            = f.submit
+
+          %br
+          = link_to 'Back', jobs_path	

@@ -1,0 +1,22 @@
+.container
+  %h2 Search Options
+
+  =form_for @search do |f|
+
+    .row
+      .col-xs-3
+        .field
+          = f.label :job_title
+          = f.select :title, options_for_select(@titles), :include_blank => true
+
+      .col-xs-2
+        .field
+          = f.label :status
+          = f.select :status, options_for_select(@status), :include_blank => true
+
+      .col-xs-2
+        .field
+          = f.submit "Start Search"
+
+    %br
+    =link_to "Back to Standard Search", jobs_path

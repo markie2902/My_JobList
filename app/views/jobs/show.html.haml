@@ -1,0 +1,40 @@
+.container
+  %p#notice= notice
+  %br
+
+  %fieldset
+    %legend Job Info
+    .jumbotron.container-fluid
+      %p
+        %strong Title:
+        = @job.title
+
+
+      %p
+        %strong Company:
+        = @job.company
+
+      %p
+        %strong Location:
+        = @job.location
+
+      %p
+        %strong Date applied:
+        = @job.date_applied
+
+      %p
+        %strong Date replied:
+        = @job.date_replied
+
+      %p
+        %strong Status:
+        = @job.status
+
+      %p
+        %strong Url:
+        = @job.url
+
+
+      = link_to 'Edit', edit_job_path(@job)
+      |
+      = link_to 'Back', jobs_path

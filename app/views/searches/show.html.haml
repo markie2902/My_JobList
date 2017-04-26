@@ -1,0 +1,31 @@
+.container
+  %h3 Advance search results
+  %br
+  - if @search.search_jobs.empty?
+    %p No results found
+
+  -else
+    %table.table.table-bordered
+      %thead
+        %tr
+          %th.th{:colspan => "6"} Search Results
+        %tr
+          %th Company
+          %th Title
+          %th Location
+          %th Date Applied
+          %th Date Replied
+          %th Status
+
+      %tbody
+        -@search.search_jobs.each do |s|
+          %tr
+            %td.td= s.company
+            %td.td= s.title
+            %td.td= s.location
+            %td.td= s.date_applied
+            %td.td= s.date_replied
+            %td.td= s.status
+
+        %br
+    =link_to "Back", new_search_path
