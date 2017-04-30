@@ -1,5 +1,6 @@
 .container
-  %h3 Advance search results
+  %h3{:onclick => "location.href='#{new_search_path}'"} Advance search results
+  -# %h3=link_to, "Advance search results", new_search_path
   %br
   - if @search.search_jobs.empty?
     %p No results found
@@ -19,7 +20,7 @@
 
       %tbody
         -@search.search_jobs.each do |s|
-          %tr
+          %tr{:onclick => "location.href='#{job_path(s)}'"}
             %td.td= s.company
             %td.td= s.title
             %td.td= s.location
@@ -29,3 +30,8 @@
 
         %br
     =link_to "Back", new_search_path
+
+// :javascript
+//   $('tr').click(function(){
+//       document.location.href='@search';
+//   })

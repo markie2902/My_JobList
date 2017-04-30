@@ -4,8 +4,10 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.search(params[:search]).paginate( page: params[:page], per_page: 8)
-    @job_count = @jobs.all.count
+    @jobs = Job.search(params[:search]).paginate( page: params[:page], per_page: 8).order(date_applied: :asc)
+    if @jobs
+      @job_count = @jobs.all.count
+    end
     # binding.pry
   end
 
